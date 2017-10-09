@@ -46,14 +46,22 @@ Im nächsten Abschnitt folgt eine Erklärung der einzelnen Parameter
 Im folgenden eine Erklärung der Konfigurationsparameter
 
 **env_vars** Eine Liste der Umgebungsvariablen aus denen der Login ausgelesen wird.
-**login_url**  Wenn der Benutzer nicht eingeloggt ist, wird dieser zu einem Anmeldeformular weitergeleitet. Wenn Sie dies auskommentieren, wird stattdessen das interne Anmeldeformular von UliCMS gezeigt
+
+**login_url**  Wenn der Benutzer nicht eingeloggt ist, wird dieser zu einem Anmeldeformularweitergeleitet. Wenn Sie dies auskommentieren, wird stattdessen das interne Anmeldeformular von UliCMS gezeigt
+
 **logout_url** Diese URL wird beim Klick auf "Logout" aufgerufen. Wenn Sie dies auskommentieren, wird nach dem Abmelden auf login_url bzw. das reguläre Anmeldeformularer weitergeleitet.
+
 **remove_realm** Wenn der Benutzername nach dem Schema username@domain aufgebaut ist, wird alles ab dem @-Zeichen entfernt.
+
 **mail_suffix** Diese Zeichenkette wird beim Anlegen eines neuen Benutzers an den Benutzernamen angehängt, um eine E-Mail Adresse zu generieren.
+
 **create_user**
 Legt fest, ob ein Benutzer erstellt werden soll, wenn dieser noch nicht existiert.
+
 **default_lastname** Nachname für automatisch erzeugte Benutzer. Der Anwender kann dies nach dem Login in seinem Profil ändern.
+
 **default_firstname** Nachname für automatisch erzeugte Benutzer. Der Anwender kann dies nach dem Login in seinem Profil ändern.
+
 **hide_logout_link** Gibt an, ob der Logout-Link im Menü entfernt werden soll. Dies macht bei Authentifizierungsverfahren Sinn, die keine standardisierte Logout-Funktion enthalten (z.B. HTTP Basic und HTTP Digest).
 
 
