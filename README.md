@@ -38,4 +38,4 @@ Im nächsten Abschnitt folgt eine Erklärung der einzelnen Parameter
 ## Troubleshooting
 Falls Sie sich aufgrund einer Fehlkonfiguration nicht mehr einloggen können, löschen Sie entweder den "remote_auth" Ordner unter "modules" oder führen Sie in der Datenbank folgendes SQL aus.
 
-    update {prefix}modules set enabled = 0 where name = 'remote_auth';
+    update {prefix}modules set enabled = 0 where name = 'remote_auth'; 
