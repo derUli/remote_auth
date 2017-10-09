@@ -6,7 +6,7 @@ Dieses Modul ist kompatibel ab UliCMS 2018.1
 Dieses Modul ermöglicht die Nutzung von externen Authentifizierungsmethoden zur Anmeldung an UliCMS.
 
 Während der Entwicklung des Moduls wurde HTTP Basic Authentication genutzt, jedoch funktioniert remote_auth mit jedem Anmeldeverfahren, bei dem der Login des angemeldeten Benutzers in eine Umgebungsvariable geschrieben wird.
-Das enthält Verfahren wie NTLM, Proxyserver mit Passwortschutz und Single Sign-On Lösungen wie den IBM® Tivoli® Access Manager
+Das enthält Verfahren wie NTLM, Proxyserver mit Passwortschutz und Single Sign-On Lösungen wie den IBM® Tivoli® Access Manager (WebSEAL)
 
 ## Funktionsweise
 Die Anmeldung wird entweder vom Webserver auf dem UliCMS läuft oder durch einen vorgeschalteten Proxy-Server durchgeführt. Dabei kann die Anmeldung entweder über einen Dialog des Browsers oder über ein Web-basiertes Anmeldeformular erfolgen.
