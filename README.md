@@ -1,5 +1,6 @@
 # remote_auth
 Remote Auth for UliCMS
+Dieses Modul ist kompatibel ab UliCMS 2018.1
 
 ## Beschreibung des Moduls
 Dieses Modul ermöglicht die Nutzung von externen Authentifizierungsmethoden zur Anmeldung an UliCMS.
