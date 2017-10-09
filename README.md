@@ -16,11 +16,13 @@ Diese Anleitung geht davon aus, dass bereits ein Authentifizierungsverfahren vol
 1. Wenn Sie PHP als Apache Modul betreiben können Sie diesen Schritt überspringen.
 Wenn Sie den Apache Webserver nutzen und PHP per CGI oder FastCGI ausführen, fügen Sie folgende Zeile in die Datei .htaccess ein.
 
-       RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization},L]
+```
+RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization},L]
+```
 
 2. Führen Sie bitte **bevor** sie remote_auth installieren die Konfiguration durch.
 Kopieren Sie dafür das folgende Snippet in die Konfigurationsdatei cms-config.php ein und passen es es so wie gewünscht an.
-
+```php
     var $remote_auth_config = array (
     		"env_vars" => array (
     				"REMOTE_USER",
@@ -36,7 +38,7 @@ Kopieren Sie dafür das folgende Snippet in die Konfigurationsdatei cms-config.p
     		"default_firstname" => "Vorname",
     		"hide_logout_link" => false
     );
-
+```
 Im nächsten Abschnitt folgt eine Erklärung der einzelnen Parameter
 3. Installieren Sie remote_auth in dem Sie unter dem Menüpunkt "Pakete" > "Paket hochladen" das SimpleInstall Package hochladen und die Installation des Pakets bestätigen
 
@@ -58,4 +60,6 @@ Legt fest, ob ein Benutzer erstellt werden soll, wenn dieser noch nicht existier
 ## Troubleshooting
 Falls Sie sich aufgrund einer Fehlkonfiguration nicht mehr einloggen können, löschen Sie entweder den "remote_auth" Ordner unter "modules" oder führen Sie in der Datenbank folgendes SQL aus.
 
-    update {prefix}modules set enabled = 0 where name = 'remote_auth';
+```sql
+update {prefix}modules set enabled = 0 where name = 'remote_auth';
+```
