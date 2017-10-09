@@ -13,7 +13,12 @@ Wenn die Anmeldung erfolgreich war, befindet sich der Name des angemeldeten Benu
 
 ## Installation
 Diese Anleitung geht davon aus, dass bereits ein Authentifizierungsverfahren vollständig konfiguriert ist.
-1. Führen Sie **bevor** sie remote_auth installieren die Konfiguration durch.
+1. Wenn Sie PHP als Apache Modul betreiben können Sie diesen Schritt überspringen.
+Wenn Sie den Apache Webserver nutzen und PHP per CGI oder FastCGI ausführen, fügen Sie folgende Zeile in die Datei .htaccess ein.
+
+       RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization},L]
+
+2. Führen Sie bitte **bevor** sie remote_auth installieren die Konfiguration durch.
 Kopieren Sie dafür das folgende Snippet in die Konfigurationsdatei cms-config.php ein und passen es es so wie gewünscht an.
 
     var $remote_auth_config = array (
@@ -33,7 +38,7 @@ Kopieren Sie dafür das folgende Snippet in die Konfigurationsdatei cms-config.p
     );
 
 Im nächsten Abschnitt folgt eine Erklärung der einzelnen Parameter
-2. Installieren Sie remote_auth in dem Sie unter dem Menüpunkt "Pakete" > "Paket hochladen" das SimpleInstall Package hochladen und die Installation des Pakets bestätigen
+3. Installieren Sie remote_auth in dem Sie unter dem Menüpunkt "Pakete" > "Paket hochladen" das SimpleInstall Package hochladen und die Installation des Pakets bestätigen
 
 ### Konfiguration
 Im folgenden eine Erklärung der Konfigurationsparameter
