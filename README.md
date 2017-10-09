@@ -34,8 +34,22 @@ Kopieren Sie dafür das folgende Snippet in die Konfigurationsdatei cms-config.p
 Im nächsten Abschnitt folgt eine Erklärung der einzelnen Parameter
 2. Installieren Sie remote_auth in dem Sie unter dem Menüpunkt "Pakete" > "Paket hochladen" das SimpleInstall Package hochladen und die Installation des Pakets bestätigen
 
+### Konfiguration
+Im folgenden eine Erklärung der Konfigurationsparameter
+
+**env_vars** Eine Liste der Umgebungsvariablen aus denen der Login ausgelesen wird.
+**login_url**  Wenn der Benutzer nicht eingeloggt ist, wird dieser zu einem Anmeldeformular weitergeleitet. Wenn Sie dies auskommentieren, wird stattdessen das interne Anmeldeformular von UliCMS gezeigt
+**logout_url** Diese URL wird beim Klick auf "Logout" aufgerufen. Wenn Sie dies auskommentieren, wird nach dem Abmelden auf login_url bzw. das reguläre Anmeldeformularer weitergeleitet.
+**remove_realm** Wenn der Benutzername nach dem Schema username@domain aufgebaut ist, wird alles ab dem @-Zeichen entfernt.
+**mail_suffix** Diese Zeichenkette wird beim Anlegen eines neuen Benutzers an den Benutzernamen angehängt, um eine E-Mail Adresse zu generieren.
+**create_user**
+Legt fest, ob ein Benutzer erstellt werden soll, wenn dieser noch nicht existiert.
+**default_lastname** Nachname für automatisch erzeugte Benutzer. Der Anwender kann dies nach dem Login in seinem Profil ändern.
+**default_firstname** Nachname für automatisch erzeugte Benutzer. Der Anwender kann dies nach dem Login in seinem Profil ändern.
+**hide_logout_link** Gibt an, ob der Logout-Link im Menü entfernt werden soll. Dies macht bei Authentifizierungsverfahren Sinn, die keine standardisierte Logout-Funktion enthalten (z.B. HTTP Basic und HTTP Digest).
+
 
 ## Troubleshooting
 Falls Sie sich aufgrund einer Fehlkonfiguration nicht mehr einloggen können, löschen Sie entweder den "remote_auth" Ordner unter "modules" oder führen Sie in der Datenbank folgendes SQL aus.
 
-    update {prefix}modules set enabled = 0 where name = 'remote_auth'; 
+    update {prefix}modules set enabled = 0 where name = 'remote_auth';
