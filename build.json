@@ -1,0 +1,11 @@
+{
+	"id": "remote_auth",
+	"version": "1.0",
+	"description": "Remote Authentication",
+	"categories": [
+		"remote",
+		"authentication",
+		"security"
+	],
+	"compatible_from": "2017.3.12"
+}
