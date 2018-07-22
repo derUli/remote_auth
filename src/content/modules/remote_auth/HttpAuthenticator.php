@@ -1,7 +1,7 @@
 <?php
 class HttpAuthenticator extends Controller {
 	public function getConfig() {
-		$cfg = new config ();
+		$cfg = new CMSConfig();
 		if (isset ( $cfg->remote_auth_config ) and is_array ( $cfg->remote_auth_config )) {
 			return $cfg->remote_auth_config;
 		}
