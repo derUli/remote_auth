@@ -51,7 +51,7 @@ class RemoteAuth extends Controller
         // An optional setting removes the "Logout" menu item
         $filteredItems = array();
         for ($i = 0; $i < count($items); $i ++) {
-            if ($items[$i]->getIdentifier() != "destroy") {
+            if ($items[$i]->getIdentifier() != "logout") {
                 $filteredItems[] = $items[$i];
             }
         }
