@@ -16,7 +16,7 @@ class RemoteAuth extends Controller
                     clearCache();
                     Settings::set("sys_initialized", "true");
                 }
-                add_hook("login_ok");
+                do_event("login_ok");
                 
                 register_session($user, true);
             } else if (isset($cfg["login_url"]) and StringHelper::isNotNullOrWhitespace($cfg["login_url"])) {
