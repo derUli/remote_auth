@@ -67,7 +67,15 @@ class HttpAuthenticator extends Controller
                 $mail_suffix = isset($cfg["mail_suffix"]) ? $cfg["mail_suffix"] : "";
                 // add mail suffix to user address
                 $email = $user . $mail_suffix;
-                adduser($user, $cfg["default_lastname"], $cfg["default_firstname"], $email, $password, false);
+                
+                $createUser = new User();
+                $createUser->setUsername($user);
+                $createUser->setLastname($cfg["default_lastname"]);
+                $createUser->setFirstname($cfg["default_firstname"]);
+                $createUser->setEmail($email);
+                $createUser->setPassword($password);
+                $createUser->setPrimaryGroupId(Settings::get("default_acl_group") ? intval(Settings::get("default_acl_group")) : null );
+                $createUser->save();
                 
                 $user = getUserByName($user);
             }
